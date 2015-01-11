@@ -1,0 +1,17 @@
+<article class="reply clearfix">
+	<div class="avatar">
+		<%= link_to "#" do %>
+			<%= image_tag 'default_avatar.png', class: "image-circle" %>
+		<% end %>
+	</div>
+	<div class="body">
+		<%= form_tag("/issues/#{issue.id}/comments", method: :post) do %>
+			<%= label_tag :username, "username" %>
+			<%= text_field_tag(:username) %>
+			<%= label_tag :email, "email" %>
+			<%= text_field_tag(:email) %>
+			<%= text_area_tag(:content) %>
+			<p><%= submit_tag "发布新活动", class: "submit-issue-button btn btn-primary" %></p>
+		<% end %>
+	</div>
+</article>

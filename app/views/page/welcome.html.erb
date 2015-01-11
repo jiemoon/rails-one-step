@@ -1,0 +1,15 @@
+<div class="home-banner" data-stretch="<%= image_url "hero.jpg" %>">
+  <div class="banner-inner container clearfix">
+    <h1>It's Party Time!</h1>
+    <p class="subheading">到时聚聚，聊聊程序</p>
+    <div class="home-banner-links">
+      <%= link_to "发布新活动", "issues/new", class: "banner-btn btn" %>
+    </div>
+  </div>
+</div>
+<div class="container clearfix">
+  <%= render partial: 'issue_list', locals: {issue: @issues} %>
+</div>
+<script>
+	$('.home-banner').anystretch();
+</script>
