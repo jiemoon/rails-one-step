@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/signup'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -19,6 +21,12 @@ Rails.application.routes.draw do
   # comments
   post '/issues/:issue_id/comments' => 'comments#create'
 
+  # users
+  get '/signup' => 'users#signup', :as => 'signup'
+  post "create_login_session" => "users#create_login_session"
+  resources :users, only: [:create]
+  get '/login' => 'users#login', :as => 'login'
+  delete '/logout' => 'users#logout', :as => 'logout'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
