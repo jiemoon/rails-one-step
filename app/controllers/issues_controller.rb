@@ -3,6 +3,7 @@ class IssuesController < ApplicationController
   	# render plain: params[:id].inspect
   	@issue = Issue.find(params[:id])
   	@comments = @issue.comments
+    print @comments
   end
 
   def new
